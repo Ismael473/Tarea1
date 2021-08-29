@@ -7,19 +7,19 @@ import java.io.OutputStream;
 
 public class ElServidor {
     public static void main(String[] args) {
-        int port = 5000;
+        int port = 9000;
         try {
             ServerSocket serverSocket = new ServerSocket(port);
             while(true) {
                 System.out.println("Esperando la conección del cliente");
                 Socket clienteSocket = serverSocket.accept();
                 System.out.println("Se acepto la conección del cliente"+clienteSocket);
-                OutputStream outputStream = clienteSocket.getOutputStream();
-                outputStream.write("Hello World\n".getBytes());
-                clienteSocket.close();
+                ManipuladorServidor manipulador = new ManipuladorServidor(clienteSocket);
+                manipulador.start();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

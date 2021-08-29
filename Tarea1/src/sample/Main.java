@@ -4,11 +4,13 @@ import javafx.application.Application;
 
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.paint.Color;
+
 
 
 
@@ -37,6 +39,9 @@ public class Main extends Application {
         root.getChildren().add(texto);
         texto.setFont(Font.font("Arial",20));
         texto.setFill(Color.RED);
+        TextField chat = new TextField();
+
+        root.getChildren().add(chat);
         //Stage Setup
         stage.setTitle("Servichat");
         stage.getIcons().add(icono);
